@@ -1,0 +1,92 @@
+#dropzone {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    font-size: 10px;
+    /* border: 2px solid #DFA612; */
+  }
+
+  .box {
+    display: flex;
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid black;
+    font-family: "Comic Sans MS";
+    font-weight: bold;
+    font-size: 100px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #dragzone{
+    margin: auto;
+    display: flex;
+    flex-flow: row wrap;
+    padding: 30px;
+    width: 80%;
+    height: auto;
+    justify-content: center;
+    /* border: 2px solid #DFA612; */
+  }
+
+  .vowel {
+    background-color: red;
+    margin: 10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    font-family: "Comic Sans MS";
+    font-weight: bold;
+    font-size: 40px;
+    color: black;
+    padding: 5px;
+    /* border: 2px solid #DFA612; */
+  }
+
+  .consonant {
+    background-color: green;
+    margin: 10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    font-family: "Comic Sans MS";
+    font-weight: bold;
+    font-size: 40px;
+    color: black;
+    padding: 5px;
+    /* border: 2px solid #DFA612; */
+  }
+
+  #header {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    font-family: "Comic Sans MS";
+    font-weight: bold;
+    font-size: 24px;
+    /* border: 2px solid #DFA612; */
+  }
+
+  #input {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    font-family: "Comic Sans MS";
+    font-size: 16px;
+    /* border: 2px solid #DFA612; */
+  }
+
+  #numInput {
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    font-family: "Comic Sans MS";
+    font-size: 16px;
+    width: 3em;
+}
