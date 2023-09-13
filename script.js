@@ -8,9 +8,17 @@ function allowDrop(ev) {
   
   function drop(ev) {
     ev.preventDefault();
-    if (ev.target.hasChildNodes()) { return; }
+    // if (ev.target.hasChildNodes()) { return; }
     var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data).cloneNode(true));
+    elToAdd = document.getElementById(data),
+    dropBefore = ev.target;
+    if (dropBefore.className == "box") {
+      dropBefore.appendChild(elToAdd.cloneNode(true));
+    } else if (dropBefore.className == "vowel") {
+      dropBefore.parentNode.replaceChild(elToAdd.cloneNode(true), dropBefore);
+    } else if (dropBefore.className == "consonant") {
+      dropBefore.parentNode.replaceChild(elToAdd.cloneNode(true), dropBefore);
+    }
     document.getElementById(data).style.backgroundColor = "transparent"
     document.getElementById(data).style.borderRadius = "0%"
     document.getElementById(data).style.fontSize = "150px"
