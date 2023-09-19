@@ -34,6 +34,9 @@ function allowDrop(ev) {
     if (document.getElementById(data).className == "consonant") {
       document.getElementById(data).style.color = "green"
     }
+    if (document.getElementById(data).className == "digraph") {
+      document.getElementById(data).style.color = "deepskyblue"
+    }
   }
 
   function boxFunc() {

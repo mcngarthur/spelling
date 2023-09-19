@@ -25,10 +25,21 @@
     margin: auto;
     display: flex;
     flex-flow: row wrap;
-    padding: 30px;
+    padding: 10px;
     width: 80%;
     height: auto;
-    justify-content: center;
+    /* justify-content: center; */
+    /* border: 2px solid #DFA612; */
+  }
+
+  #dragzone2{
+    margin: auto;
+    display: flex;
+    flex-flow: row wrap;
+    padding: 10px;
+    width: 80%;
+    height: auto;
+    /* justify-content: center; */
     /* border: 2px solid #DFA612; */
   }
 
@@ -49,6 +60,21 @@
 
   .consonant {
     background-color: green;
+    margin: 10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    font-family: "Comic Sans MS";
+    font-weight: bold;
+    font-size: 40px;
+    color: black;
+    padding: 5px;
+    /* border: 2px solid #DFA612; */
+  }
+
+  .digraph {
+    background-color: deepskyblue;
     margin: 10px;
     width: 60px;
     height: 60px;
