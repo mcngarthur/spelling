@@ -13,6 +13,9 @@ function allowDrop(ev) {
     elToAdd = document.getElementById(data),
     dropBefore = ev.target;
     if (dropBefore.className == "box") {
+      while (dropBefore.firstChild) {
+        dropBefore.removeChild(dropBefore.firstChild);
+      }
       dropBefore.appendChild(elToAdd.cloneNode(true));
     } else if (dropBefore.className == "vowel") {
       dropBefore.parentNode.replaceChild(elToAdd.cloneNode(true), dropBefore);
