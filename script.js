@@ -21,6 +21,8 @@ function allowDrop(ev) {
       dropBefore.parentNode.replaceChild(elToAdd.cloneNode(true), dropBefore);
     } else if (dropBefore.className == "consonant") {
       dropBefore.parentNode.replaceChild(elToAdd.cloneNode(true), dropBefore);
+    } else if (dropBefore.className == "digraph") {
+      dropBefore.parentNode.replaceChild(elToAdd.cloneNode(true), dropBefore);
     }
     document.getElementById(data).style.backgroundColor = "transparent"
     document.getElementById(data).style.borderRadius = "0%"
