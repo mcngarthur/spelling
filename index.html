@@ -13,8 +13,10 @@
 </div>
 <div id="input">
     <label for="numletter">Number of letters (1 - 10):&nbsp;</label>
-    <input name="number" type="number" id="numInput" name="numInput" onchange="boxFunc()" min=1 max=10 onkeydown="return false;" ondrop = "return false;"></input>
-</div><br>
+    <input type="number" id="numInput" name="numInput" onchange="boxFunc()" min=1 max=10 onkeydown="return false;" ondrop = "return false;"></input>
+    <label for="reset">&nbsp;</label>
+    <button type="button" id="resetBut" name="resetBut" onclick="resetFunc()">Reset</button>
+</div>
 <div id="dropzone">
 </div>
 <div id="dragzone">

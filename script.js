@@ -42,9 +42,9 @@ function allowDrop(ev) {
   }
 
   function boxFunc() {
-    let numInput = document.getElementById("dropzone");
-    while (numInput.firstChild) {
-      numInput.removeChild(numInput.firstChild);
+    let dropzone = document.getElementById("dropzone");
+    while (dropzone.firstChild) {
+      dropzone.removeChild(dropzone.firstChild);
     }
     
     let numInputval = document.getElementById("numInput").value;
@@ -55,6 +55,14 @@ function allowDrop(ev) {
       newDiv.setAttribute("ondrop", "drop(event)");
       newDiv.setAttribute("ondragover", "allowDrop(event)");
       newDiv.setAttribute("onmousedown", "return false");
-      numInput.insertBefore(newDiv, numInput.firstChild);
+      dropzone.insertBefore(newDiv, dropzone.firstChild);
     }
+  }
+
+  function resetFunc() {
+    let dropzone = document.getElementById("dropzone");
+    while (dropzone.firstChild) {
+      dropzone.removeChild(dropzone.firstChild);
+    }
+    document.getElementById("numInput").value = ""
   }
