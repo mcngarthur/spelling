@@ -43,7 +43,7 @@
     /* border: 2px solid #DFA612; */
   }
 
-  .vowel {
+  .vowel_dragzone {
     background-color: red;
     margin: 10px;
     width: 60px;
@@ -58,7 +58,19 @@
     /* border: 2px solid #DFA612; */
   }
 
-  .consonant {
+  .vowel_dropzone {
+    background-color: transparent;
+    width: 200px;
+    height: 200px;
+    border-radius: 0%;
+    text-align: center;
+    align-items: center;
+    font-size: 150px;
+    color: red;
+    /* border: 2px solid #DFA612; */
+  }
+
+  .consonant_dragzone {
     background-color: green;
     margin: 10px;
     width: 60px;
@@ -73,7 +85,19 @@
     /* border: 2px solid #DFA612; */
   }
 
-  .digraph {
+  .consonant_dropzone {
+    background-color: transparent;
+    width: 200px;
+    height: 200px;
+    border-radius: 0%;
+    text-align: center;
+    align-items: center;
+    font-size: 150px;
+    color: green;
+    /* border: 2px solid #DFA612; */
+  }
+
+  .digraph_dragzone {
     background-color: deepskyblue;
     margin: 10px;
     width: 60px;
@@ -85,6 +109,18 @@
     font-size: 40px;
     color: black;
     padding: 5px;
+    /* border: 2px solid #DFA612; */
+  }
+
+  .digraph_dropzone {
+    background-color: transparent;
+    width: 200px;
+    height: 200px;
+    border-radius: 0%;
+    text-align: center;
+    align-items: center;
+    font-size: 150px;
+    color: deepskyblue;
     /* border: 2px solid #DFA612; */
   }
 

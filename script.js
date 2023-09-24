@@ -8,36 +8,71 @@ function allowDrop(ev) {
   
   function drop(ev) {
     ev.preventDefault();
-    // if (ev.target.hasChildNodes()) { return; }
     var data = ev.dataTransfer.getData("text");
-    elToAdd = document.getElementById(data),
-    dropBefore = ev.target;
-    if (dropBefore.className == "box") {
-      while (dropBefore.firstChild) {
-        dropBefore.removeChild(dropBefore.firstChild);
+    elToAdd = document.getElementById(data);
+    var id = new Date().getTime() + Math.random();
+    newId = elToAdd.id + id;
+    if (ev.target.className == "box") {
+      box = ev.target;
+    } else {
+      box = ev.target.parentNode;
+    }
+    var nextBoxNum = Number(box.id.substr(box.id.length - 1)) + 1;
+    var nextBoxId = "box" + nextBoxNum;
+    var numBox = document.getElementById("dropzone").getElementsByClassName("box").length;
+    if (elToAdd.id == "sh" && nextBoxNum <= numBox) {
+      while (box.firstChild) {
+        box.removeChild(box.firstChild);
       }
-      dropBefore.appendChild(elToAdd.cloneNode(true));
-    } else if (dropBefore.className == "vowel") {
-      dropBefore.parentNode.replaceChild(elToAdd.cloneNode(true), dropBefore);
-    } else if (dropBefore.className == "consonant") {
-      dropBefore.parentNode.replaceChild(elToAdd.cloneNode(true), dropBefore);
-    } else if (dropBefore.className == "digraph") {
-      dropBefore.parentNode.replaceChild(elToAdd.cloneNode(true), dropBefore);
-    }
-    document.getElementById(data).style.backgroundColor = "transparent"
-    document.getElementById(data).style.borderRadius = "0%"
-    document.getElementById(data).style.fontSize = "150px"
-    document.getElementById(data).style.width = "200px"
-    document.getElementById(data).style.height = "200px"
-    document.getElementById(data).style.alignItems = "center"
-    if (document.getElementById(data).className == "vowel") {
-      document.getElementById(data).style.color = "red"
-    }
-    if (document.getElementById(data).className == "consonant") {
-      document.getElementById(data).style.color = "green"
-    }
-    if (document.getElementById(data).className == "digraph") {
-      document.getElementById(data).style.color = "deepskyblue"
+      box.appendChild(document.getElementById("s").cloneNode(true));
+      document.getElementById("s").setAttribute("class", "digraph_dropzone");
+      document.getElementById("s").setAttribute("id", newId);
+      while (document.getElementById(nextBoxId).firstChild) {
+        document.getElementById(nextBoxId).removeChild(document.getElementById(nextBoxId).firstChild);
+      }
+      document.getElementById(nextBoxId).appendChild(document.getElementById("h").cloneNode(true));
+      document.getElementById("h").setAttribute("class", "digraph_dropzone");
+      document.getElementById("h").setAttribute("id", newId);
+    } else if (elToAdd.id == "ch" && nextBoxNum <= numBox) {
+      while (box.firstChild) {
+        box.removeChild(box.firstChild);
+      }
+      box.appendChild(document.getElementById("c").cloneNode(true));
+      document.getElementById("c").setAttribute("class", "digraph_dropzone");
+      document.getElementById("c").setAttribute("id", newId);
+      while (document.getElementById(nextBoxId).firstChild) {
+        document.getElementById(nextBoxId).removeChild(document.getElementById(nextBoxId).firstChild);
+      }
+      document.getElementById(nextBoxId).appendChild(document.getElementById("h").cloneNode(true));
+      document.getElementById("h").setAttribute("class", "digraph_dropzone");
+      document.getElementById("h").setAttribute("id", newId);
+    } else if (elToAdd.id == "th" && nextBoxNum <= numBox) {
+      while (box.firstChild) {
+        box.removeChild(box.firstChild);
+      }
+      box.appendChild(document.getElementById("t").cloneNode(true));
+      document.getElementById("t").setAttribute("class", "digraph_dropzone");
+      document.getElementById("t").setAttribute("id", newId);
+      while (document.getElementById(nextBoxId).firstChild) {
+        document.getElementById(nextBoxId).removeChild(document.getElementById(nextBoxId).firstChild);
+      }
+      document.getElementById(nextBoxId).appendChild(document.getElementById("h").cloneNode(true));
+      document.getElementById("h").setAttribute("class", "digraph_dropzone");
+      document.getElementById("h").setAttribute("id", newId);
+    } else if (elToAdd.className == "vowel_dragzone") {
+      while (box.firstChild) {
+        box.removeChild(box.firstChild);
+      }
+      box.appendChild(document.getElementById(data).cloneNode(true));
+      document.getElementById(data).setAttribute("class", "vowel_dropzone");
+      document.getElementById(data).setAttribute("id", newId);
+    } else if (elToAdd.className == "consonant_dragzone") {
+      while (box.firstChild) {
+        box.removeChild(box.firstChild);
+      }
+      box.appendChild(document.getElementById(data).cloneNode(true));
+      document.getElementById(data).setAttribute("class", "consonant_dropzone");
+      document.getElementById(data).setAttribute("id", newId);
     }
   }
 
